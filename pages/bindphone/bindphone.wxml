@@ -1,0 +1,35 @@
+<import src="../common/toast.wxml" />
+<import src="../common/foot.wxml" />
+
+<view class="pageContent">
+    <block wx:if="{{pageData.userMobile != ''}}">
+        <view class="page_0">
+            <input placeholder="请输入原手机号码" class="inputtxt font1" placeholder-class="inputtxt_placeholder" focus="{{pageData.userMobile != ''}}" bindinput="inputOldPhone" maxlength="11"/>
+        </view>
+    </block>
+    <view class="page_1">
+        <view class="page_1_1">
+<view wx:if="{{pageData.userMobile != ''}}">
+        <input placeholder="请输入新手机号码" class="inputtxt font1" placeholder-class="inputtxt_placeholder" focus="{{pageData.userMobile == ''}}" bindinput="inputPhone" maxlength="11" />
+      </view>
+      <view wx:else>
+        <input placeholder="请输入手机号" class="inputtxt font1" placeholder-class="inputtxt_placeholder" focus="{{pageData.userMobile == ''}}" bindinput="inputPhone" maxlength="11" />
+      </view>
+           
+            <view class="page_1_1_1 bt {{codeMsg.sendCodeTime != -1 ? 'btdisabled' : ''}}" bindtap="tapSendCode">
+            {{codeMsg.sendCodeTime != -1 ? codeMsg.sendCodeTime+"s" : "发送验证码"}} {{codeText}}
+            </view>
+        </view>
+        <view class="page_1_1">
+            <input placeholder="请输入验证码" class="inputtxt font1" placeholder-class="inputtxt_placeholder" bindinput="inputCode" maxlength="4"/>
+        </view>
+    </view>
+    <view class="page_3 bt {{btDisabled ? 'btdisabled' : ''}} " bindtap="tapAdd">
+        {{pageData.userMobile != ''?'更换绑定':'绑定'}}
+    </view>
+    <block wx:if="{{pageData.userMobile == ''}}">
+        <view class="page_4 fontcolor1 font2">友情提示：绑定手机号码后，账户更安全！</view>
+    </block>
+</view>
+<template is="foot" data="{{footdata:footdata}}"/>
+<template is="toast" data="{{ToastData:ToastData}}"/>

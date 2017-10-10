@@ -1,0 +1,26 @@
+{
+  "pages":[
+    
+    "pages/index/index",
+    "pages/pay/pay",
+    "pages/map/map",
+    "pages/bindphone/bindphone",
+    "pages/add/add",
+    "pages/carmanagement/carmanagement",
+    
+    "pages/record/record",
+    
+    "pages/paystep3/paystep3",
+    "pages/paystep2/paystep2",
+    
+    "pages/logs/logs",
+
+    "pages/userItem/userItem"
+  ],
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#36393b",
+    "navigationBarTitleText": "大黄蜂洗车",
+    "navigationBarTextStyle":"#fff"
+  }
+}

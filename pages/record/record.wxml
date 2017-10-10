@@ -1,0 +1,104 @@
+<import src="../common/foot.wxml" />
+
+
+
+<view class="page_1">
+  <view class="page_1_1 font1 {{pageData.idx == 0 ? 'on' : ''}}" data-idx="0" bindtap="tapLab">洗车记录</view>
+  <view class="page_1_1 font1 {{pageData.idx == 1 ? 'on' : ''}}" data-idx="1" bindtap="tapLab">充值记录</view>
+</view>
+
+
+<swiper class="pageContent" current="{{pageData.idx}}" bindchange="swiperChange">
+  <swiper-item>
+    <scroll-view scroll-y="true" class="page_2">
+      <block wx:for="{{pageData.washRecord}}" wx:for-index="idx" wx:for-item="item" wx:key="*this">
+        <view class="page_2_1">
+          <view class="page_2_1_1">
+            <view class="page_2_1_1_1">
+
+              <view class="page_2_1_1_1_1 font1">{{item.carNo}}</view>
+              <view class="page_2_1_1_1_2 fontcolor1 font2">{{item.position}}</view>
+
+            </view>
+          </view>
+
+          <view class="page_2_1_2">
+            <view class="page_2_1_2_1">
+
+              <view wx:if="{{item.pay_method==1}}">
+                <view class="page_2_1_2_1_1 fontcolor7">¥ {{item.pay_amount}}</view>
+              </view>
+              
+              <view wx:else>
+                <view class="page_2_1_2_1_1 fontcolor7">套餐支付</view>
+              </view>
+
+              <!--<view class="page_2_1_2_1_1 ">{{item.pay_method}}</view>-->
+              <view class="page_2_1_2_1_2 ">{{item.timeText}}</view>
+
+            </view>
+          </view>
+
+        </view>
+      </block>
+    </scroll-view>
+  </swiper-item>
+  <swiper-item>
+    <scroll-view scroll-y="true" class="page_2">
+      <block wx:for="{{pageData.payRecord}}" wx:for-index="idx" wx:for-item="item" wx:key="*this">
+        <view wx:if="{{item.payNumber!=1}}">
+
+          <view class="page_2_1">
+            <view class="page_2_1_1">
+              <view class="page_2_1_1_1">
+                <view class="page_2_1_1_1_1 font1">{{item.packageName}}</view>
+                <view class="page_2_1_1_1_2 font2 fontcolor1">订单号：{{item.orderId}}</view>
+              </view>
+            </view>
+            <view class="page_2_1_2">
+              <view class="page_2_1_2_1">
+
+                <view class="page_2_1_2_1_1 ">¥ {{item.payAmount}}
+                </view>
+                <view class="page_2_1_2_1_2 ">{{item.timeText}}</view>
+
+              </view>
+            </view>
+
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+  </swiper-item>
+</swiper>
+
+
+<!--<scroll-view scroll-y="true" class="pageContent">
+    <block wx:if="{{pageData.idx == 0}}">
+        <view class="page_2">
+            <block wx:for="{{pageData.washRecord}}" wx:for-index="idx" wx:for-item="item"  wx:key="*this">
+                <view class="page_2_1">
+                    <view class="page_2_1_1">
+                        <view class="font1">{{item.carNo}}</view>
+                        <view class="fontcolor1 font2">{{item.position}}</view>
+                    </view>
+                    <view class="page_2_1_2 fontcolor1 font2">{{item.timeText}}</view>
+                </view>
+            </block>    
+        </view>
+    </block>
+    <block wx:if="{{pageData.idx == 1}}">
+        <view class="page_2">
+            <block wx:for="{{pageData.payRecord}}" wx:for-index="idx" wx:for-item="item"  wx:key="*this">
+                <view class="page_2_1">
+                    <view class="page_2_1_1">
+                        <view class="font1">{{item.packageName}}</view>
+                        <view class="fontcolor1 font2">订单号：{{item.orderId}}</view>
+                    </view>
+                    <view class="page_2_1_2 fontcolor1 font2">{{item.timeText}}</view>
+                </view>
+            </block>    
+        </view>
+    </block>
+</scroll-view>-->
+<template is="foot" data="{{footdata:footdata}}" />

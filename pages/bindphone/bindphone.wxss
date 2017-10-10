@@ -1,0 +1,16 @@
+page{background-color: rgb(240, 239, 245);}
+.page_1{}
+
+.page_1_1{padding-left: 30rpx;position: relative;background-color: #fff}
+.pageContent{position: relative}
+.page_1_1:first-of-type::after{position: absolute;left: 30rpx;right: 0;bottom: 0;height: 1px;content: "";font-size: 0;background-color: #ccc;}
+
+.page_1_1_1{width: 200rpx;height: 60rpx;display: flex;align-items: center;justify-content: center;position: absolute;right: 30rpx;top: 14rpx;border-radius: 8rpx;margin: 0;}
+.page_0{padding-left: 30rpx;position: relative;background-color: #fff;margin-bottom: 20rpx;}
+
+
+.inputtxt{height: 88rpx;line-height: 88rpx;width: 450rpx;}
+.inputtxt_placeholder{color: #999}
+
+.page_3{}
+.page_4{color: #999;padding: 0 30rpx;}

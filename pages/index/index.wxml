@@ -1,0 +1,146 @@
+<!--index.wxml-->
+<!--<view class="container">
+  <view  bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view>-->
+<import src="../common/ad.wxml" />
+<import src="../common/foot.wxml" />
+<import src="../common/toast.wxml" />
+
+<template is="toast" data="{{ToastData:ToastData}}"/>
+<template is="ad" data="{{addata:addata}}"/>
+<scroll-view scroll-y="true" class="container">
+  <!--<canvas canvas-id="canvas" class="canvas"></canvas>
+  <button type="default" size="default" style='border:1px solid red'> default </button>-->
+  <view class="index_1">
+    <image src="{{userInfo.avatarUrl}}" class="index_1_1"></image>
+    <view class="index_1_2 font1">{{pageData.greeting}}，{{userInfo.nickName}}</view>
+    <!--<view class="index_1_3 font2 fontcolor1"  bindtap="tapPhone">
+    {{ pageData.mobile == "" ? "(点击绑定手机号)" : "" }}</view>-->
+    <view class="index_1_4">
+      <image src="../../image/index_ico.png" class="index_1_4_1"></image>
+      <view class="index_1_4_2">{{pageData.userType}}</view>
+    </view>
+    
+  </view>
+  <view class="index_2" bindtap="tapPayStep">
+      <view class="index_2_1 font1">可用洗车次数：
+          <text class="font3 fontcolor6">{{pageData.count}}</text>
+	      </view>
+    <view class="index_2_2 font2 fontcolor1">{{pageData.text}}</view>
+    <view class="index_2_recharge">充值</view>
+    <view class="index_2_block"></view>
+  </view>
+
+  <view class="index_3">
+    <view bindtap="tapCar" url="index?add=xxx" class="index_3_navigator">
+      <view class="index_3_navigator-text font1">车辆管理</view>
+      <view class="index_3_navigator_right">
+        <view class="index_3_navigator_right_txt font2 fontcolor1">{{pageData.carNums}}</view>
+        <view class="index_3_navigator-arrow"></view>
+      </view>
+    </view>
+    <view bindtap="tapPhone" class="index_3_navigator">
+      <view class="index_3_navigator-text font1">绑定手机</view>
+      <view class="index_3_navigator_right">
+        <view class="index_3_navigator_right_txt font2 fontcolor1">{{ pageData.mobile == "" ? "" : pageData.mobile }}</view>
+        <view class="index_3_navigator-arrow"></view>
+      </view>
+    </view>
+    <view bindtap="tapRecord" class="index_3_navigator">
+      <view class="index_3_navigator-text font1">查看记录</view>
+      <view class="index_3_navigator-arrow"></view>
+    </view>
+  </view>
+
+  <view class="index_3 mb20">
+    <view bindtap="tapCarAdd" class="index_3_navigator">
+      <view class="index_3_navigator-text font1">附近洗车点</view>
+      <image src="../../image/index_ico3.png" class="index_3_navigator-ico"></image>
+    </view>
+  </view>
+</scroll-view>
+
+<block wx:if="{{prodata.proshow}}">
+  <view class="prodata_view {{prodata.proshowfull?'prodata_viewfull':''}}">
+    <block wx:if="{{prodata.provalue == -5}}">
+      <view class="authorizeerror_1">
+        <image src="../../image/authorizeerror.png" class="authorizeerror_1_1"></image>
+      </view>
+      <view class="authorizeerror_2 font1">未获取授权无法使用</view>
+      <!-- <view class="authorizeerror_4 font2">如何重新授权？</view>
+      <view class="authorizeerror_3 font2">第一步：打开微信—发现—小程序；</view>
+      <view class="authorizeerror_3 font2">第二步：删除该小程序；</view>
+      <view class="authorizeerror_3 font2">第三步：搜索该小程序（或者微信扫描二维码），打开小程序并“允许”授权；</view> -->
+      <button type="primary" style="width: 90%" bindtap="openSetting">立即授权</button>
+    </block>
+    <block wx:elif="{{prodata.provalue == -1}}">
+      <view class="prodata_view_1">
+        <view class="prodata_view_1_bg">
+          <canvas canvas-id="canvas3" class="canvas3"></canvas>
+        </view>
+        <view class="prodata_view_1_3">已停止</view>
+      </view>
+      <view class="prodata_view_4" bindtap="tapTell">点击拨打客服电话</view>
+    </block>
+    <block wx:elif="{{prodata.provalue == -2 || prodata.provalue == -3 || prodata.provalue == -4}}">
+
+      <block wx:if="{{prodata.provalue == -2}}">
+        <view class="prodata_view_5">
+          <image src="../../image/washstep2.gif" class="prodata_view_img"></image>
+        </view>
+        <view class="prodata_view_6 font1">洗车机工作中，请稍候...</view>
+      </block>
+      <block wx:if="{{prodata.provalue == -3}}">
+        <view class="prodata_view_5">
+          <image src="../../image/washstep3.gif" class="prodata_view_img"></image>
+        </view>
+        <view class="prodata_view_6 font1">闸机即将打开，请稍候...</view>
+      </block>
+      <block wx:if="{{prodata.provalue == -4}}">
+        <view class="prodata_view_5">
+          <image src="../../image/washstep1.gif" class="prodata_view_img"></image>
+        </view>
+        <view class="prodata_view_6 font1">请将车辆驶入洗车机。</view>
+      </block>
+      <view class="prodata_view_7 font2">洗车注意事项</view>
+      <view class="prodata_view_8 font2">1、闸机打开后请尽快通过；</view>
+      <view class="prodata_view_8 font2">2、按照洗车机提示将车停好，关好车窗；</view>
+      <view class="prodata_view_8 font2">3、洗车过程中请不要离开车子。</view>
+      <view class="prodata_view_9">
+        <image src="../../image/cue1.png" class="prodata_view_9_1"></image>
+        <image src="../../image/cue2.png" class="prodata_view_9_1"></image>
+        <image src="../../image/cue3.png" class="prodata_view_9_1"></image>
+      </view>
+    </block>
+    <block wx:else>
+        <view class="prodata_view_1">
+          <view class="prodata_view_1_bg">
+            <canvas canvas-id="canvas2" class="canvas2"></canvas>
+          </view>
+          <view class="prodata_view_1_1">{{prodata.provalue}}%</view>
+          <view class="prodata_view_1_2">{{prodata.protext}}</view>
+          <canvas canvas-id="canvas" class="canvas"></canvas>
+        </view>
+        <view class="prodata_view_2">
+          <text>{{prodata.steptext}}</text>
+          <view class="prodata_view_2_pause {{prodata.stopType == 2 ? 'btdisabled':'' }}" bindtap="tapStopMachine">强制停止</view>
+        </view>
+    </block>
+  </view>
+</block>
+<block wx:if="{{prodata.stopType == 0}}">
+  <view class="confirm">
+    <view class="confirm_content">
+        <button type="primary" bindtap="confirmPrimary" class="confirm_bt1 font1"> 确认强制停止 </button>
+        <button type="default" bindtap="confirmCancel" hover-class="other-button-hover" class="confirm_bt2 font1" plain="true"> 取消 </button>
+    </view>
+  </view>
+</block>
+
+<template is="foot" data="{{footdata:footdata}}"/>

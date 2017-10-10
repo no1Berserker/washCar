@@ -1,0 +1,12 @@
+<template name="foot">
+<view class="page-foot">
+    <view class="page-foot-phone font2 fontcolor2">
+        <navigator url="../userItem/userItem" class="page-foot-phone1">{{footdata.userItem}}</navigator>
+        <view class="page-foot-phone2" bindtap="tapTell">
+          {{footdata.phonemsg}}
+          <image class="page-foot-phone-img"  src="{{footdata.src}}" bindtap="tapTell"></image>
+        </view>
+    </view>
+    <view class="page-foot-copyright font4">{{footdata.copyright}}</view>
+</view>
+</template>

@@ -1,0 +1,144 @@
+<import src="../common/toast.wxml" />
+<import src="../common/foot.wxml" />
+
+<template is="toast" data="{{ToastData:ToastData}}"/>
+<view class="pageContent">
+    <view class="page_1">
+        <block wx:for="{{pageData.carList}}" wx:for-index="idx" wx:for-item="item" wx:key="*this">
+            <view class="page_1_1">
+                <view class="page_1_1_1">车牌号：{{item.no}}</view>
+                <view class="page_1_1_2" bindtap="delCar" data-idx="{{idx}}">
+                    <view class=" p1">×</view>
+                </view>
+            </view>
+        </block>
+        <view class="inputtxt" bindtap="keyboardShow">
+          <text class="font1">+ 添加车牌</text>
+        </view>
+    </view>
+
+    <!-- <view class="page_2">
+        <view class="page_2_1">
+            <input placeholder="请输入车牌号" class="inputtxt font1" placeholder-class="inputtxt_placeholder" auto-focus bindinput="inputCarNo" maxlength="11" value="{{pageData.carNo}}"/>
+            <view class="page_2_1_1 bt" bindtap="insertCar2">添加</view>
+        </view>
+    </view> -->
+
+    <view class="page_3 fontcolor1 font2">快速添加（根据你的洗车记录提供）</view>
+    <view class="page_4">
+        <block wx:for="{{pageData.memoryCarList}}" wx:for-index="idx" wx:for-item="item" wx:key="*this">
+            <view class="page_4_1 fontcolor1 font2" bindtap="insertCar" data-no="{{item.no}}" data-idx="{{idx}}">{{item.no}}</view>
+        </block>
+    </view>
+
+    <!-- <block wx:if="{{pageData.carNums == 0 && pageData.packageId != 0}}">
+        <view class="page_3 bt" bindtap="tapPay">支付</view>
+    </block> -->
+</view>
+
+<template is="foot" data="{{footdata:footdata}}"/>
+
+<block wx:if="{{keyboardShow}}">
+  <view class="keyboardBg" bindtap="keyboardShow">
+    <view class="key_input" catchtap="stopPropagation">
+      <view class="carNo">{{pageData.carNo}}<text bindtap="insertCar2">完成</text></view>
+      <view class="keyboards" wx:if="{{keySwitch == 1}}"> 
+        <view class="keyboard"> 
+            <button data-msg="苏" bindtap="inputCarNo1">苏</button>
+            <button data-msg="京" bindtap="inputCarNo1">京</button> 
+            <button data-msg="津" bindtap="inputCarNo1">津</button> 
+            <button data-msg="沪" bindtap="inputCarNo1">沪</button> 
+            <button data-msg="渝" bindtap="inputCarNo1">渝</button> 
+            <button data-msg="冀" bindtap="inputCarNo1">冀</button> 
+            <button data-msg="豫" bindtap="inputCarNo1">豫</button> 
+            <button data-msg="云" bindtap="inputCarNo1">云</button> 
+            <button data-msg="辽" bindtap="inputCarNo1">辽</button> 
+            <button data-msg="黑" bindtap="inputCarNo1">黑</button> 
+        </view> 
+        <view class="keyboard"> 
+            <button data-msg="湘" bindtap="inputCarNo1">湘</button> 
+            <button data-msg="皖" bindtap="inputCarNo1">皖</button> 
+            <button data-msg="鲁" bindtap="inputCarNo1">鲁</button> 
+            <button data-msg="新" bindtap="inputCarNo1">新</button> 
+            <button data-msg="浙" bindtap="inputCarNo1">浙</button> 
+            <button data-msg="赣" bindtap="inputCarNo1">赣</button> 
+            <button data-msg="鄂" bindtap="inputCarNo1">鄂</button> 
+            <button data-msg="桂" bindtap="inputCarNo1">桂</button> 
+            <button data-msg="甘" bindtap="inputCarNo1">甘</button> 
+            <button data-msg="晋" bindtap="inputCarNo1">晋</button>
+        </view> 
+        <view class="keyboard"> 
+            <button data-msg="蒙" bindtap="inputCarNo1">蒙</button> 
+            <button data-msg="陕" bindtap="inputCarNo1">陕</button> 
+            <button data-msg="吉" bindtap="inputCarNo1">吉</button> 
+            <button data-msg="闽" bindtap="inputCarNo1">闽</button> 
+            <button data-msg="贵" bindtap="inputCarNo1">贵</button> 
+            <button data-msg="粤" bindtap="inputCarNo1">粤</button> 
+            <button data-msg="青" bindtap="inputCarNo1">青</button> 
+            <button data-msg="藏" bindtap="inputCarNo1">藏</button> 
+            <button data-msg="川" bindtap="inputCarNo1">川</button> 
+            <button data-msg="宁" bindtap="inputCarNo1">宁</button> 
+        </view> 
+        <view class="keyboard"> 
+            <button class="keyboard_switch" bindtap="keySwitch">切换</button> 
+            <button data-msg="琼" bindtap="inputCarNo1">琼</button> 
+            <button data-msg="使" bindtap="inputCarNo1">使</button> 
+            <button data-msg="领" bindtap="inputCarNo1">领</button>
+            <button data-msg="学" bindtap="inputCarNo1">学</button> 
+            <button data-msg="警" bindtap="inputCarNo1">警</button>
+            <button data-msg="澳" bindtap="inputCarNo1">澳</button>  
+            <button data-msg="港" bindtap="inputCarNo1">港</button> 
+            <button class="keyboard_delete" bindtap="keyDelete"></button> 
+        </view> 
+      </view>  
+      <view class="keyboards" wx:if="{{keySwitch == 0}}"> 
+        <view class="keyboard"> 
+            <button data-msg="1" bindtap="inputCarNo1">1</button>  
+            <button data-msg="2" bindtap="inputCarNo1">2</button> 
+            <button data-msg="3" bindtap="inputCarNo1">3</button> 
+            <button data-msg="4" bindtap="inputCarNo1">4</button> 
+            <button data-msg="5" bindtap="inputCarNo1">5</button> 
+            <button data-msg="6" bindtap="inputCarNo1">6</button> 
+            <button data-msg="7" bindtap="inputCarNo1">7</button> 
+            <button data-msg="8" bindtap="inputCarNo1">8</button> 
+            <button data-msg="9" bindtap="inputCarNo1">9</button> 
+            <button data-msg="0" bindtap="inputCarNo1">0</button> 
+        </view> 
+        <view class="keyboard"> 
+            <button data-msg="Q" bindtap="inputCarNo1">Q</button> 
+            <button data-msg="W" bindtap="inputCarNo1">W</button> 
+            <button data-msg="E" bindtap="inputCarNo1">E</button> 
+            <button data-msg="R" bindtap="inputCarNo1">R</button> 
+            <button data-msg="T" bindtap="inputCarNo1">T</button> 
+            <button data-msg="Y" bindtap="inputCarNo1">Y</button> 
+            <button data-msg="U" bindtap="inputCarNo1">U</button> 
+            <button data-msg="I" bindtap="inputCarNo1">I</button> 
+            <button data-msg="O" bindtap="inputCarNo1">O</button> 
+            <button data-msg="P" bindtap="inputCarNo1">P</button>
+        </view> 
+        <view class="keyboard"> 
+            <button data-msg="A" bindtap="inputCarNo1">A</button> 
+            <button data-msg="S" bindtap="inputCarNo1">S</button> 
+            <button data-msg="D" bindtap="inputCarNo1">D</button> 
+            <button data-msg="F" bindtap="inputCarNo1">F</button> 
+            <button data-msg="G" bindtap="inputCarNo1">G</button> 
+            <button data-msg="H" bindtap="inputCarNo1">H</button> 
+            <button data-msg="J" bindtap="inputCarNo1">J</button> 
+            <button data-msg="K" bindtap="inputCarNo1">K</button> 
+            <button data-msg="L" bindtap="inputCarNo1">L</button> 
+        </view> 
+        <view class="keyboard"> 
+            <button class="keyboard_switch" bindtap="keySwitch">切换</button> 
+            <button data-msg="Z" bindtap="inputCarNo1">Z</button> 
+            <button data-msg="X" bindtap="inputCarNo1">X</button> 
+            <button data-msg="C" bindtap="inputCarNo1">C</button>
+            <button data-msg="V" bindtap="inputCarNo1">V</button> 
+            <button data-msg="B" bindtap="inputCarNo1">B</button> 
+            <button data-msg="N" bindtap="inputCarNo1">N</button> 
+            <button data-msg="M" bindtap="inputCarNo1">M</button> 
+            <button class="keyboard_delete" bindtap="keyDelete"></button> 
+        </view> 
+      </view> 
+    </view>
+  </view>
+</block>

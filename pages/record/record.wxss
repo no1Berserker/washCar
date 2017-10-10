@@ -1,0 +1,19 @@
+.pageContent{top: 101rpx;height:auto;}
+.page_1{height: 100rpx;line-height: 100rpx; display: flex;position: relative;width: 100%}
+.page_1::after{position: absolute;bottom: 0px;left:0;height: 1px;font-size: 0;width: 100%;background-color: rgb(204,204,204);content: "";}
+
+.page_1_1{flex: 0 0 50%;text-align: center;background-color: rgb(234,234,234);box-sizing: border-box;}
+.page_1_1:first-of-type{border-right: 1px solid rgb(204,204,204);}
+.page_1_1.on{background-color:rgb(250, 250, 250);color:#10aeff}
+.page_2{background-color: #fff;height: 100%;}
+.page_2_1{display: flex;justify-content:space-between;height: 120rpx;padding-right:30rpx;margin-left: 30rpx;}
+.page_2_1:nth-of-type(n+2){border-top: 1px solid rgb(239, 239, 239)}
+/*.page_2_1_1{display: flex;align-content:center;flex-direction:column;justify-content: center}*/
+
+.page_2_1_2{display: flex;align-items: center;}
+
+.page_2_1_1{display: table;vertical-align: middle;height: 100%;}
+.page_2_1_1_1{display: table-cell;/*vertical-align: middle;*/padding-top: 22rpx;}
+.page_2_1_1_1_2,.page_2_1_1_1_1{line-height: 0;padding: 24rpx 0;}
+.page_2_1_2_1_1{padding-top: 25rpx ;padding-bottom: 10rpx; font-size:28rpx; text-align: right; }
+.page_2_1_2_1_2{font-size:28rpx; color:#999999; padding-bottom: 8rpx}

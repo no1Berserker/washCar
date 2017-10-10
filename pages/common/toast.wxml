@@ -1,0 +1,12 @@
+<template name="toast">
+    <block wx:if="{{ToastData.img.show}}">
+        <view class="Toast Toastright">
+            <image src="{{ToastData.img.img }}" class="Toast_img"></image>
+            <view class="font2 fontcolor4 Toast_txt">{{ToastData.img.txt}}</view>
+        </view>
+    </block>
+
+    <block wx:if="{{ToastData.txt.show}}">
+        <view class="ToastMsg font2 fontcolor4">{{ToastData.txt.txt}}</view>
+    </block>
+</template>

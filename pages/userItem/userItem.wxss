@@ -1,0 +1,5 @@
+.user-item {width: 95%; margin: 0 auto; overflow: hidden;}
+.item {text-align: center; font-weight: bold; margin-top: 30rpx; margin-bottom: 10rpx;}
+.item-tit {font-weight: bold; line-height: 60rpx;}
+.item-con {text-align: justify; line-height: 45rpx;}
+.sec {text-indent: 2em;}

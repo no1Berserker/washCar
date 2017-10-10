@@ -1,0 +1,63 @@
+<import src="../common/foot.wxml" />
+<import src="../common/toast.wxml" />
+<template is="toast" data="{{ToastData:ToastData}}"/>
+
+<view class="city">
+    <view class="city_1 font1">当前城市：{{pageData.cities[pageData.pickerIndex]}}</view>
+    <picker bindchange="bindPickerChange" value="{{pageData.pickerIndex}}" range="{{pageData.cities}}" class="city_2">
+        <view class="city_2_1 font2 fontcolor3" bindtap="selectCity">更换城市</view>
+    </picker>
+</view>
+<!--<block wx:if="{{pageData.selectCityHide}}">
+    <view  class="selectCity">
+        <picker-view indicator-style="height: 50px;" class='pickerCity' value="{{cityvalue}}" bindchange="cityChange" >
+            <picker-view-column>
+                <view wx:for="{{provinces}}" wx:for-index="idx" wx:for-item="item" wx:key="*this" style="line-height: 50px;text-align:center;height:50px;">{{item}}</view>
+            </picker-view-column>
+            <picker-view-column>
+                <view wx:for="{{cities}}" wx:for-index="idx" wx:for-item="item" wx:key="*this" style="line-height: 50px;text-align:center;height:50px;">{{item}}</view>
+            </picker-view-column>
+        </picker-view>
+    </view>
+</block>-->
+<scroll-view scroll-y="true" class="pageContent">
+  <view class="payMode">
+      <block wx:for="{{pageData.modes}}" wx:for-index="idx" wx:for-item="item"  wx:key="count">
+          <view class="payMode_1 {{item.hover?'payMode_1Hover':''}}" bindtap="bindTapMode" data-idx="{{idx}}" data-id="{{item.id}}">
+              <view class="payMode_1_1">
+                  <view class="payMode_1_1_2">
+                    <image  class="payMode_1_1_2_img" src="../../image/paystep3_icobg.png"></image>
+                  </view>
+                  <view class="payMode_1_1_1"><text class="payMode_1_1_1_1">{{item.times}}</text>次</view>
+              </view>
+              
+              <view class="payMode_1_2">
+                  <view class="payMode_1_2_money">
+                      <text class="payMode_1_2_money_1">￥</text>{{item.cost}} 
+                  </view>
+                  <view class="payMode_1_2_text">原价：￥{{item.baseCost}}</view>
+              </view>
+              
+              <view class="payMode_1_3">续期{{item.delay}}个月</view>
+          </view>
+      </block>
+  </view>
+</scroll-view>
+
+<template is="foot" data="{{footdata:footdata}}"/>
+
+<view class="payPopupBg" wx:if="{{payPopupShow}}" bindtap="payPopupShow">
+  <view class="payPopup" catchtap="stopPropagation">
+    <view class="payPopup_txt font1">充值需先绑定手机号和车牌号</view>
+    <view class="payPopup_sta">
+      <view class="payPopup_tip" bindtap="toBindph">
+        <image src="{{pageData.payImg_1}}"></image>
+        <view class="{{pageData.payTxt_1.sty}}">{{pageData.payTxt_1.txt}}</view>
+      </view>
+      <view class="payPopup_tip" bindtap="toBindcar">
+        <image src="{{pageData.payImg_2}}"></image>
+        <view class="{{pageData.payTxt_2.sty}}">{{pageData.payTxt_2.txt}}</view>
+      </view> 
+    </view>
+  </view>
+</view>  

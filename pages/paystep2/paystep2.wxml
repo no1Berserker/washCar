@@ -1,0 +1,36 @@
+<import src="../common/foot.wxml" />
+
+<scroll-view scroll-y="true" class="pageContent">
+
+    <block wx:for="{{pageData.cards}}" wx:for-index="idx" wx:for-item="item" wx:key="*this">
+        <view class="paystep2List">
+            <view class="paystep2List_1">
+                <view class="paystep2List_1_1 font4"> 
+                    <view class="paystep2List_1_1_1">NO.{{item.idx}}</view>
+                    <view class="paystep2List_1_1_2">
+                        <view class="paystep2List_1_1_2_1" bindtap="tapRecord" data-cityid="{{item.cityId}}">查看记录</view>
+                        <view class="paystep2List_1_1_2_2"></view>
+                    </view>
+                    
+                </view>
+                <view class="paystep2List_1_2"> 
+                    <view class="paystep2List_1_2_1 font7">剩余次数</view>
+                    <view class="paystep2List_1_2_2 font3">{{item.times}}</view>
+                </view>
+                <view class="paystep2List_1_3 font4"> 
+                    <view class="paystep2List_1_3_1">限{{item.cityName}}</view>
+                    <view class="paystep2List_1_3_2">有效期至：{{item.expiredDate}}</view>
+                </view>
+            </view>
+            <view class="paystep2List_2 font4">全车身清洗、消毒、风干，做到无死角、无损伤，让您的爱车清洁如新。购买套餐并绑定车牌即可实现自动识别通过闸机，更快，更省，更贴心。
+            </view>
+        </view>
+    </block>
+
+    <view url="../paystep3/paystep3" class="paystep2Bt font1" bindtap="tapPaystep3">充值</view>
+</scroll-view>
+
+
+
+
+<template is="foot" data="{{footdata:footdata}}"/>

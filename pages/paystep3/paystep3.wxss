@@ -1,0 +1,52 @@
+page{background-color: rgb(240, 239, 245);}
+.pageContent{top: 88rpx;}
+.city{padding: 0 20rpx;height: 88rpx;display: flex;align-items: strecth;justify-content: space-between;background-color: #fff;}
+.city_1{display: flex;align-items: center;}
+.city_2{display: flex;align-items: center;}
+.city_2_1{display: flex;align-items: center;height: 88rpx;}
+
+.selectCity{width: 100%; height: 300px;position: fixed;top: 88rpx;left: 0;}
+.pickerCity{width: 100%; height: 100%;}
+
+/*.payMode{padding: 0 20rpx;display: flex;flex-flow: row wrap;}
+.payMode_1{width: 223rpx;height: 223rpx;background-color: #fff;margin:20rpx 20rpx 0 0;border-radius: 15rpx;}
+.payMode_1Hover{color: #fff;background-color: #10aeff;}
+.payMode_1Hover .payMode_1_2_text::after{background-color: #fff;}
+.payMode_1Hover .payMode_1_2_text{color: #fff}
+.payMode_1:nth-of-type(3n){margin-right: 0;}
+.payMode_1_1{height: 150rpx;display: flex;align-items: center;justify-content:center;}
+.payMode_1_2,.payMode_1_3{display: flex;justify-content:center;}
+.payMode_1_2{align-items:strecth;}
+.payMode_1_2_text{position: relative;display: flex;align-items:center;color: #d14747;}
+.payMode_1_2_text::after{position: absolute;content: "";left: 0;width: 100%;height: 1px;top: 40%;background-color: #d14747;font-size: 0}*/
+
+.payMode{padding: 0 20rpx;display: flex;flex-flow: row wrap;}
+.payMode_1{width: 223rpx;height: 356rpx;background-color: #fff;margin:20rpx 20rpx 0 0;border-radius: 10rpx;display: flex;flex-direction:column;align-items: center;}
+.payMode_1:nth-of-type(3n){margin-right: 0;}
+.payMode_1_1{height: 150rpx;display: flex;align-items: center;justify-content:center;width: 150rpx;margin-top: 22rpx;color: #fff;font-size: 40rpx;position: relative; /*background-color: rgb(25, 163, 255);border-radius: 150rpx;*/}
+.payMode_1_1_2{position: absolute;left: 0;top: 0;width: 100%;height: 100%;}
+.payMode_1_1_2_img{width: 150rpx;height: 150rpx;}
+.payMode_1_1_1{display: flex;align-items: baseline;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);}
+.payMode_1_1_1_1{font-size: 50rpx;}
+.payMode_1_2{margin-top: 42rpx;}
+.payMode_1_2_money{font-size: 40rpx;color: #333;}
+.payMode_1_2_money_1{font-size: 30rpx;}
+.payMode_1_2_text{font-size: 24rpx;color: #ccc;position: relative;text-decoration: line-through;}
+/*.payMode_1_2_text::after{position: absolute;content: "";left: 0;width: 100%;height: 1px;top: 40%;background-color: #ccc;font-size: 0}*/
+.payMode_1_3{width: 190rpx;border-top: 1px dotted #ccc;font-size: 24rpx;color: #999;display: flex;justify-content: center;margin-top: 14rpx;line-height: 44rpx;}
+
+.payPopupBg{position: fixed; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4);}
+.payPopup{width: 584rpx; background: #fff; margin: 312rpx auto; border-radius: 4px; display: flex; align-items:center;
+flex-direction:column; justify-content:center; overflow: hidden;}
+.payPopup_txt{color: #333333; text-align: center; margin-top: 46rpx;}
+.payPopup_sta{display: flex; justify-content: space-around; padding: 46rpx 0 40rpx 0;}
+.payPopup_tip{text-align: center;}
+.payPopup_tip:first-child{margin-right: 50rpx;}
+.payPopup_tip:last-child{margin-left: 50rpx;}
+.payPopup_tip image{width: 140rpx; height: 140rpx; margin: 0 auto;}
+.payPopup_tip view{color: #0faffe; padding-top: 10rpx;}
+.payPopup_tip .h {color: #cccccc;}
+.payPopup_btn{width: 520rpx; color: #fff; background: #cccccc; border-radius: 50rpx; margin-bottom: 30rpx;}
+
+
+

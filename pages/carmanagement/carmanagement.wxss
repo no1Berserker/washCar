@@ -1,0 +1,54 @@
+page{background-color: rgb(240, 239, 245);}
+.p1{width: 30rpx;height: 30rpx;line-height: 26rpx;text-align: center;border: 1px solid red;border-radius: 16rpx;color: red;font-size: 34rpx;position: absolute;right: 30rpx;top: 27rpx;}
+.pageContent{position: relative;}
+
+.page_1{margin-bottom: 30rpx;}
+.page_1_1{padding-left: 30rpx;position: relative;background-color: #fff}
+.page_1_1:nth-of-type(n+1)::after{position: absolute;left: 30rpx;right: 0;top: 0;height: 1px;content: "";font-size: 0;background-color: #ccc;}
+.page_1_1_1{height: 88rpx;line-height: 88rpx;width: 450rpx;}
+.page_1_1_2{position: absolute;right: 0;top: 0;width: 100rpx;height: 100%;}
+
+.page_2{margin-bottom: 30rpx;}
+.page_2_1{padding-left: 30rpx;position: relative;background-color: #fff}
+.page_2_1_1{width: 200rpx;height: 60rpx;display: flex;align-items: center;justify-content: center;position: absolute;right: 30rpx;top: 14rpx;border-radius: 8rpx;margin: 0;}
+.page_2_2{padding-left: 30rpx;position: relative;background-color: #fff;margin-bottom: 20rpx;}
+
+.page_3{margin-bottom: 20rpx;padding-left: 30rpx;}
+.page_4{padding-left:20rpx;display: flex;flex-wrap:wrap;}
+.page_4_1{height: 60rpx;line-height: 60rpx;background: #fff;width: 164rpx;text-align: center;margin-bottom: 20rpx;border-radius: 5rpx;box-sizing: border-box;flex: 0 0 25%;border-right:20rpx solid rgb(240, 239, 245);}
+
+.inputtxt{height: 88rpx;line-height: 88rpx; background: #fff; text-align: center; border-top: 1px solid #ccc; color: #09bb07;}
+.inputtxt_placeholder{color: #999}
+
+.carNo{width: 100%;height: 93rpx;background: #fff; font-size: 44rpx;line-height: 93rpx;text-align: center;position: relative;}
+.carNo text{margin-right: 20rpx;font-size: 32rpx;color: #3366cc;position: absolute;right: 20rpx;top: 0;}
+
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1506393106060'); /* IE9*/
+  src: url('iconfont.eot?t=1506393106060#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff;charset=utf-8;base64,d09GRgABAAAAAAVgAAsAAAAAB9gAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABHU1VCAAABCAAAADMAAABCsP6z7U9TLzIAAAE8AAAARAAAAFZW7kgsY21hcAAAAYAAAABeAAABhppABr5nbHlmAAAB4AAAAZEAAAHEaFY4aGhlYWQAAAN0AAAALwAAADYO/v4aaGhlYQAAA6QAAAAcAAAAJAfeA4RobXR4AAADwAAAAAwAAAAMC+kAAGxvY2EAAAPMAAAACAAAAAgAdgDibWF4cAAAA9QAAAAfAAAAIAESAF1uYW1lAAAD9AAAAUUAAAJtPlT+fXBvc3QAAAU8AAAAIwAAADTq8eN0eJxjYGRgYOBikGPQYWB0cfMJYeBgYGGAAJAMY05meiJQDMoDyrGAaQ4gZoOIAgCKIwNPAHicY2Bk/sE4gYGVgYOpk+kMAwNDP4RmfM1gxMjBwMDEwMrMgBUEpLmmMDgwVDxzYm7438AQw9zA0AAUZgTJAQAoQgyueJzFkMENgDAMAy9t6QMxCA+m6BS8mKMTd41iQnkwQS05VhxLiQIsQBQPMYFdGA9OueZ+ZHU/eSZLjUBtpXf1nyqiWXYNKplpsHmr/9i87qPTV6iDOrGVl4Qb9+8MlwAAeJxlj79u1EAYxHfW2Os9n+3c2uf12ffPNrm9KHAoF9spEN4mDYgCKRUdPAC0aSjSIFFQ5BkQIi8RiRdIwyPwp0A0kWjoHDa0fBp9mmZG8yM2ITdfrUsrJRFZkwNyTJ4RAmcfZUBnKFS9ofsYF/ZYxoGlKlWwqtxYjyBLJ062bb2SDnNCBJjjsNi2akMVmrqjD7FNZsAkz07E7lRY5xikav62f0I/YLyopmF3v398T8fbZeSeDoWYCPHedWzbpfROGOCVTLjNB07/0Q6z8eVijy4wnKjs6XN/mYuX7+rXs13JgbMzRPkyuNCjbGT0JksiMWE7vptmfnU3xukPL42Gs9V3Ys769z7TC5IY1mPDWZSsMev57fqDRBYdjkYbRAGqonxgabSHxRySHRnOMoRaGegF2C25hpyjrZX1oq/zhLqD/hqeLWgyxdW6ARqGLO5r3wvor2vP83EVZ/ituUh5p7kUrtaukFx3PBWcfgoAxvs//Q3bMbZd43yv6UWcOz799pMz5PGX/1LGw9SRv6g8Ri0AAAB4nGNgZGBgAOJ1wk+d4vltvjJwszCAwNX3d4UQ9P+HLAzMEkAuBwMTSBQAPfILCAB4nGNgZGBgbvjfwBDDwgACQJKRARUwAwBHCQJsBAAAAAPpAAAEAAAAAAAAAAB2AOJ4nGNgZGBgYGYIZGBlAAEmIOYCQgaG/2A+AwAQ9wFwAHicZY9NTsMwEIVf+gekEqqoYIfkBWIBKP0Rq25YVGr3XXTfpk6bKokjx63UA3AejsAJOALcgDvwSCebNpbH37x5Y08A3OAHHo7fLfeRPVwyO3INF7gXrlN/EG6QX4SbaONVuEX9TdjHM6bCbXRheYPXuGL2hHdhDx18CNdwjU/hOvUv4Qb5W7iJO/wKt9Dx6sI+5l5XuI1HL/bHVi+cXqnlQcWhySKTOb+CmV7vkoWt0uqca1vEJlODoF9JU51pW91T7NdD5yIVWZOqCas6SYzKrdnq0AUb5/JRrxeJHoQm5Vhj/rbGAo5xBYUlDowxQhhkiMro6DtVZvSvsUPCXntWPc3ndFsU1P9zhQEC9M9cU7qy0nk6T4E9XxtSdXQrbsuelDSRXs1JErJCXta2VELqATZlV44RelzRiT8oZ0j/AAlabsgAAAB4nGNgYoAALgbsgJmRiZGZkYWBsYKtpDQzozSTgQEAFoUDMwA=') format('woff'),
+  url('iconfont.ttf?t=1506393106060') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1506393106060#iconfont') format('svg'); /* iOS 4.1- */
+}
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-tuihui:before { content: "\e642"; }
+
+.keyboardBg{position: fixed; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4);}
+.key_input{position: absolute; width: 100%; left: 0; bottom: 0; }
+.keyboards{background: #ebebeb; width: 100%; padding: 0; overflow: hidden; background: #ebebeb;}
+.keyboards .keyboard {text-align: center; margin: 15rpx 3rpx 10rpx; display: flex;justify-content: space-around;}
+.keyboards .keyboard:first-child {margin-top: 10rpx;}
+.keyboards button{text-decoration: none; text-shadow: 0 1px 1px white; border: 0; background: #fff; border-radius: 4px; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4), 0 1px 0 rgba(0, 0, 0, 0.2); width: 68rpx; margin: 0 6rpx; padding: 2rpx 0; font-size: 40rpx;}
+.keyboards button:active {background-image: -webkit-gradient(linear, left top, left bottom, from(#e2e3e4), to(#aaadb4));}
+.keyboards .keyboard_switch{width: 100rpx; padding: 11rpx 0; font-size: 34rpx; color: #fff; background: #cccccc;}
+.keyboards .keyboard_switch:active{background: #999999;}
+.keyboards .keyboard_delete{width: 100rpx; background: #cc3333;font-size: 0;}
+.keyboards .keyboard_delete::after{font-family:"iconfont"; content: "\e642";font-size: 80rpx; color: #fff;}
+.keyboards .keyboard_delete:active{background: #990000;}
+.keyboards .keyboard_delete image{width: 100rpx; height: 104rpx;}

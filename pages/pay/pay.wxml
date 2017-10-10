@@ -1,0 +1,55 @@
+<import src="../common/foot.wxml" />
+<import src="../common/toast.wxml" />
+
+
+<scroll-view scroll-y="true" class="paycontainer pageContent">
+    <view class="paycontainercontent">
+        <view class="paycontainer_1">
+            <image class="paycontainer_1_1" src="../../image/bg3.png" mode="widthFix"></image>
+            <view class="paycontainer_1_2" >
+                <view>
+                    <block wx:if="{{payData.carNo != ''}}">
+                        <text class="fontcolor5">{{payData.carNo}},</text>
+                    </block>
+                    {{payData.payTitle}}
+                </view>
+             </view>
+            <!--<view class="paycontainer_1_3" >欢迎首次体验智能洗车！</view>-->
+        </view>
+        <!--<view class="paycontainer_2">
+            <block wx:if="{{pagedata.provalue != 100}}">
+                <view class="paycontainer_2_1">
+                    <view class="paycontainer_2_1_1">{{pagedata.provalue}}%</view>
+                    <canvas canvas-id="canvas" class="canvas"></canvas>
+                </view>
+            </block>
+            <block wx:else>
+                <image class="paycontainer_2_1" src="../../image/payico.png"></image>
+            </block>
+
+            <view class="paycontainer_2_2">
+                <view class="paycontainer_2_2_1">您好，苏A888888</view>
+                <view class="paycontainer_2_2_2">请等待上一位车主完成洗车。</view>
+            </view>
+        </view>-->
+        <view class="paycontainer_3">
+            <view class="paycontainer_3_1 font5"><text class="paycontainer_3_1_1">{{payData.payTxt}}</text></view>
+            <block wx:if="{{payData.payType == 0 || payData.payType == 1 || payData.payType == 6 || payData.payType == 7}}">
+                <view class="paycontainer_3_2 font1 {{validPay ? '' : 'btdisabled'}}" bindtap="tapPay">支付</view>
+                <view class="paycontainer_3_3 font1" bindtap="tapRecharge">充值</view>
+            </block>
+            <block wx:elif="{{payData.payType == 2 || payData.payType == 3 }}">
+                <form bindsubmit="tapCusPay" report-submit="true">
+                    <button formType="submit"  class="paycontainer_3_2 font1 {{validPay ? '' : 'btdisabled'}}" >支付</button>
+                    <view class="paycontainer_3_3 font1" bindtap="tapRecharge">充值</view>
+                </form>
+            </block>
+            <block wx:elif="{{payData.payType == 4 || payData.payType == 5 }}">
+                <view class="paycontainer_3_2 font1" bindtap="tapRecharge">充值</view>
+                <view class="paycontainer_3_3 font1 {{validPay ? '' : 'btdisabled'}} " bindtap="tapPay">单次支付￥{{payData.pay.price}}</view>
+            </block>
+        </view>
+    </view>
+</scroll-view>
+<template is="foot" data="{{footdata:footdata}}"/>
+<template is="toast" data="{{ToastData:ToastData}}"/>

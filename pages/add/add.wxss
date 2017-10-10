@@ -1,0 +1,29 @@
+page{background-color: rgb(240, 239, 245);}
+.p1{width: 30rpx;height: 30rpx;line-height: 26rpx;text-align: center;border: 1px solid red;border-radius: 16rpx;color: red;font-size: 34rpx;position: absolute;right: 30rpx;top: 27rpx;}
+.pageContent{position: relative;}
+
+.page_1{background-color: #fff;height: 100%;}
+.page_1_1{display: flex;justify-content:space-between;height: 145rpx;padding-right:30rpx;margin-left: 30rpx;}
+.page_1_1:nth-of-type(n+2){border-top: 1px solid rgb(239, 239, 239)}
+/*.page_2_1_1{display: flex;align-content:center;flex-direction:column;justify-content: center}*/
+
+.page_1_1_2{display: flex;align-items: center;}
+
+.page_1_1_1{display: table;vertical-align: middle;height: 100%;}
+.page_1_1_1_1{display: table-cell;/*vertical-align: middle;*/padding-top: 22rpx;}
+.page_1_1_1_1_2,.page_1_1_1_1_1{line-height: 0;padding: 32rpx 0;}
+.page_1_1_1_1_1{line-height: 0;padding: 32rpx 0;}
+.page_1_1_1_1_1{line-height: 0;padding: 32rpx 0;}
+.page_1_1_2_1_1{height:80rpx; width:80rpx;padding-top: 35rpx;float:right}
+.page_1_1_2_1_2{font-size:28rpx; padding-bottom: 30rpx;}
+.page_1_1_2_1_3{height:80rpx; width:80rpx; vertical-align:middle}
+
+
+
+
+.page_3{margin-bottom: 20rpx;padding-left: 30rpx;}
+.page_4{padding-left:20rpx;display: flex;flex-wrap:wrap;}
+.page_4_1{height: 60rpx;line-height: 60rpx;background: #fff;width: 164rpx;text-align: center;margin-bottom: 20rpx;border-radius: 5rpx;box-sizing: border-box;flex: 0 0 25%;border-right:20rpx solid rgb(240, 239, 245);}
+
+.inputtxt{height: 88rpx;line-height: 88rpx;width: 450rpx;}
+.inputtxt_placeholder{color: #999}

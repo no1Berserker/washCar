@@ -1,0 +1,43 @@
+<import src="../common/toast.wxml" />
+<import src="../common/foot.wxml" />
+
+<template is="toast" data="{{ToastData:ToastData}}" />
+<view class="pageContent">
+
+
+  <view class="page_1">
+    <block wx:for="{{addressList}}" wx:for-index="idx" wx:for-item="item" wx:key="*this">
+      <view class="page_1_1" bindtap="openLocation" data-name="{{item.name}}" data-latitude="{{item.latitude}}" data-longitude="{{item.longitude}}">
+        <view class="page_1_1_1">
+          <view class="page_1_1_1_1">
+
+            <view class="page_1_1_1_1_1 font1">{{item.name}}</view>
+            <view class="page_1_1_1_1_2 fontcolor1 font2">{{item.address}}</view>
+
+          </view>
+        </view>
+
+        <view class="page_1_1_2">
+          <view class="page_1_1_2_1">
+
+<block wx:if ="{{item.distance!=''}}">
+            <image src="../../image/200.png" class="page_1_1_2_1_1"></image>
+            <view class="page_1_1_2_1_2 ">{{item.distance}}km</view>
+        </block>
+
+            <block wx:else>
+            <image src="../../image/200.png" class="page_1_1_2_1_3"></image>
+            </block>
+
+          </view>
+        </view>
+        <!--</navigator>-->
+      </view>
+    </block>
+  </view>
+
+
+
+</view>
+<template is="foot" data="{{footdata:footdata}}" />
+

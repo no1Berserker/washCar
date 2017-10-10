@@ -1,0 +1,30 @@
+/*.paycontainer{position: fixed;top: 0;bottom: 60px;width: 100%;}*/
+.paycontainercontent{display: flex;flex-direction:column;background-color: #fff;}
+.pageContent{background-color: #fff}
+/*.page-foot{position:relative;}*/
+
+.paycontainer_1{width: 100%;position: relative}
+.paycontainer_1_1{width: 100%;}
+.paycontainer_1_2{position: absolute;left:100rpx;top: 330rpx; /*bottom:96rpx;*/ width: 560rpx;height: 100rpx;line-height: 50rpx;color: #000;font-size: 35rpx; display: flex;align-items: center;justify-content: center; }
+
+.paycontainer_1_3{position: absolute;right:90rpx;top:422rpx; /*bottom: 64rpx;*/width: 240rpx;height: 40rpx;line-height: 40rpx;text-align: center;font-size: 20rpx;color: #b0dfff;}
+
+.paycontainer_2{height: 280rpx;background-color: #efeff4;display: flex;align-content:center;justify-content:center;align-items:center;}
+.paycontainer_2_1{margin-right: 40rpx;width: 58px;height: 58px;position: relative;}
+.paycontainer_2_1_1{width: 100%;height: 100%; display: flex;align-items:center;justify-content:center;color: rgb(28, 182, 252);font-size: 18px;}
+.canvas{position: absolute;left: 0;top: 0;width: 100%;height: 100%;}
+
+
+.paycontainer_2_2{display: flex;flex-direction:column;align-content:center;justify-content:center;}
+.paycontainer_2_2_1{font-size: 44rpx;}
+.paycontainer_2_2_2{font-size: 34rpx;color: #999;}
+
+.paycontainer_3{padding-top: 124rpx;}
+.paycontainer_3_1{display: flex;justify-content:center;}
+.paycontainer_3_1_1{position: relative}
+.paycontainer_3_1_1:after{position: absolute;bottom: 0;left: 0;content: "";width: 100%; height: 1px;font-size: 0;border-bottom: 1px dotted #999;}
+.paycontainer_3_2{margin: 102rpx 30rpx 20rpx 30rpx;display: flex;justify-content:center;height: 88rpx;color: #fff;background-color: #09bb07;align-items:center;border-radius: 5px;}
+.paycontainer_3_3{margin: 0 30rpx 20rpx 30rpx;display: flex;justify-content:center;height: 88rpx;color: #000;background-color: #fff;border: 1px solid rgb(214, 214, 214); align-items:center;border-radius: 5px;}
+
+
+.btdisabled{opacity: 0.3}

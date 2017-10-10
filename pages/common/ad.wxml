@@ -1,0 +1,10 @@
+<template name="ad">
+<swiper indicator-dots="{{addata.indicatorDots}}"
+  autoplay="{{addata.autoplay}}" interval="{{addata.interval}}" duration="{{addata.duration}}" class="ad-swiper">
+  <block wx:for="{{addata.imgUrls}}" wx:for-index="idx" wx:for-item="item" wx:key="*this" >
+    <swiper-item>
+      <image src="{{item.url}}" class="slide-image" width="100%"/>
+    </swiper-item>
+  </block>
+</swiper>
+</template>
