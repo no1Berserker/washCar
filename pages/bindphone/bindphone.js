@@ -212,14 +212,16 @@ if (pageData.userMobile != '') {
         },
         success: function(res) {
             console.log(Url,res);
+            
             if(res.data.status == "0"){
               config.mobile = inputData.phone;
               console.log(config.mobile)
               config.userInfo.mobile = config.mobile.substring(0,3)+"****"+config.mobile.substring(7,11);
               if (pageData.paySkip == 1) {
-                wx.redirectTo({
-                  url: "../paystep3/paystep3"
+                wx.navigateBack({
+                  delta: 1
                 })
+                return;
               }
               wx.redirectTo({
                 url:"../index/index"
