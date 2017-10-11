@@ -3,15 +3,15 @@ const config = require('../../config');
 const toast = require('../../utils/toast');
 // var pageData = {
 //   carList:[
-//     {"no":"苏A 29183"}
+//     {"no":"苏A29183"}
 //   ],
 //   memoryCarList:[
-//     {"no":"苏A kk181"},
-//     {"no":"苏A kk182"},
-//     {"no":"苏A kk183"},
-//     {"no":"苏A kk184"},
-//     {"no":"苏A kk185"},
-//     {"no":"苏A kk186"}
+//     { "no": "苏AKK181" },
+//     { "no": "苏AKK182" },
+//     { "no": "苏AKK183" },
+//     { "no": "苏AKK184" },
+//     { "no": "苏AKK185" },
+//     { "no": "苏AKK186" }
 //   ],
 //   carNo:""
 // }
@@ -80,12 +80,7 @@ Page({
             }
           }
           if(res.data.washCarNos != null){
-            pageData.memoryCarList = [{ "no": "苏AKK181" },
-              { "no": "苏AKK182" },
-              { "no": "苏AKK183" },
-              { "no": "苏AKK184" },
-              { "no": "苏AKK185" },
-              { "no": "苏AKK186" }];
+            pageData.memoryCarList = [];
             for(var i = 0;i<res.data.washCarNos.length;i++){
               pageData.memoryCarList.push({"no":res.data.washCarNos[i]})
             }
